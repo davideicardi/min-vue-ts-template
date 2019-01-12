@@ -17,19 +17,26 @@ TODO:
 
 First time:
 
-  npm install
+```
+npm install
+```
 
 Development build (typescript + rollup):
 
-  npm run build
+```
+npm run build
+```
 
 Files will be written inside `./public/bundle.js` folder. A Visual Studio Code is configured to run executing Ctrl+Shift+B.
 
 For production build:
 
-  BUILD=production npm run build
+```
+BUILD=production npm run build
+```
 
 Run demo http server (using `http-server`) with:
 
-  npm start
-
+```
+npm start
+```
