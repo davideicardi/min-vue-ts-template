@@ -9,6 +9,7 @@ Features:
 - .vue single file compoments support
 - Node.js required only for build
 
+
 TODO:
 
 - Use typescript also inside .vue files
