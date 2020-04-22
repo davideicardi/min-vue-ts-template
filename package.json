@@ -1,6 +1,6 @@
 {
   "name": "min-vue-ts-template",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Minimal Vue + Typescript web application template/starter. Bundled with rollup.",
   "main": "index.js",
   "scripts": {
