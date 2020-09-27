@@ -4,7 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 
 export default {
-  input: './src/main.js',
+  input: './dist/main.js',
   output: {
     file: './public/bundle.js',
     // Browser format (Immediately-invoked function expression)

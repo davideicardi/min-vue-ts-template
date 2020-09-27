@@ -8436,13 +8436,18 @@
 
   //
 
-  var script = {
+  var script = Vue.extend( {
     data () {
       return {
         message: getHelloWorld()
       }
-    }
-  };
+    },
+    computed: {
+      messageToUpper() { // Computed Property returns a string
+        return this.message.toUpperCase();
+      }
+    }  
+  });
 
   function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
       if (typeof shadowMode !== 'boolean') {
@@ -8580,7 +8585,9 @@
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
-    return _c("div", { staticClass: "example" }, [_vm._v(_vm._s(_vm.message))])
+    return _c("div", { staticClass: "example" }, [
+      _vm._v(_vm._s(_vm.messageToUpper))
+    ])
   };
   var __vue_staticRenderFns__ = [];
   __vue_render__._withStripped = true;
@@ -8588,7 +8595,7 @@
     /* style */
     const __vue_inject_styles__ = function (inject) {
       if (!inject) return
-      inject("data-v-0ef133c9_0", { source: "\n.example {\n  color: red;\n}\n", map: {"version":3,"sources":["/home/davide/projects/min-vue-ts-template/src/App.vue"],"names":[],"mappings":";AAkBA;EACA,UAAA;AACA","file":"App.vue","sourcesContent":["<template>\n  <div class=\"example\">{{ message }}</div>\n</template>\n\n<script>\n\nimport {getHelloWorld} from \"./foo\";\n\nexport default {\n  data () {\n    return {\n      message: getHelloWorld()\n    }\n  }\n}\n</script>\n\n<style>\n.example {\n  color: red;\n}\n</style>"]}, media: undefined });
+      inject("data-v-4ad2f340_0", { source: "\n.example {\n  color: green;\n}\n", map: {"version":3,"sources":["/home/davide/projects/min-vue-ts-template/dist/App.vue"],"names":[],"mappings":";AAuBA;EACA,YAAA;AACA","file":"App.vue","sourcesContent":["<template>\n  <div class=\"example\">{{ messageToUpper }}</div>\n</template>\n\n<script>\nimport Vue from \"vue\";\nimport {getHelloWorld} from \"./foo\";\n\nexport default Vue.extend( {\n  data () {\n    return {\n      message: getHelloWorld()\n    }\n  },\n  computed: {\n    messageToUpper() { // Computed Property returns a string\n      return this.message.toUpperCase();\n    }\n  }  \n})\n</script>\n\n<style>\n.example {\n  color: green;\n}\n</style>"]}, media: undefined });
 
     };
     /* scoped */
@@ -8618,7 +8625,7 @@
 
   new Vue({
       el: '#app',
-      render: (h) => h(__vue_component__),
+      render: function (h) { return h(__vue_component__); },
       data: {}
   });
 
