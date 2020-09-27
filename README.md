@@ -27,7 +27,7 @@ Development build (typescript + rollup):
 npm run build
 ```
 
-Files will be written inside `./public/bundle.js` folder. A Visual Studio Code is configured to run executing Ctrl+Shift+B.
+Files will be written inside `./public/bundle.js` folder. Visual Studio Code is configured to run executing Ctrl+Shift+B.
 
 For production build:
 
