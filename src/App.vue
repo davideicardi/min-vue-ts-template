@@ -2,25 +2,25 @@
   <div class="example">{{ messageToUpper }}</div>
 </template>
 
-<script>
-import Vue from "vue";
+<script lang="ts">
+import {defineComponent} from "vue";
 import {getHelloWorld} from "./foo";
 
-export default Vue.extend( {
+export default defineComponent({
   data () {
     return {
       message: getHelloWorld()
     }
   },
   computed: {
-    messageToUpper() { // Computed Property returns a string
+    messageToUpper(): string {
       return this.message.toUpperCase();
     }
-  }  
-})
+  }
+});
 </script>
 
-<style>
+<style scoped>
 .example {
   color: green;
 }
